@@ -21,5 +21,10 @@
   "homepage": "https://github.com/ej-kimm/tomorrow-house#readme",
   "dependencies": {
     "node-sass": "^9.0.0"
+  },
+  "devDependencies": {
+    "stylelint-config-recess-order": "^4.2.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-scss": "^5.0.1"
   }
 }
