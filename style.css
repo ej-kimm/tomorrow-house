@@ -1,3 +1,4 @@
 p {
-  color: blue;
-  display: block; }
+  display: block;
+  color: #000000;
+  text-transform: lowercase; }
