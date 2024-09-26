@@ -80,3 +80,31 @@
   </button>
 </div>
 ```
+
+### 2. Sidebar
+
+- 로그인을 하지 않은 경우
+
+![image](https://github.com/user-attachments/assets/48701bc2-5d24-412b-8176-e88afdd8448f)
+
+```html
+<div class="sidebar-auth">
+  <a class="btn-outlined btn-40" href="/">로그인</a>
+  <a class="btn-primary btn-40" href="/">회원가입</a>
+</div>
+```
+
+- 로그인을 했을 경우
+
+![image](https://github.com/user-attachments/assets/b974dc18-4842-48c5-8636-04f4971d5828)
+
+```html
+<div class="sidebar-user">
+  <a href="/">
+    <div class="avatar-24">
+      <img src="./assets/images/img-user-01.jpg" alt="사딸라 아저씨" />
+    </div>
+    <strong class="username">사달라</strong>
+  </a>
+</div>
+```
