@@ -32,6 +32,7 @@
   }
 
   @include responsive(T) {
+    // 768px
     &-left {
       @include flexbox(start);
     }
@@ -45,6 +46,23 @@
         .gnb-icon-button {
           margin-right: 8px;
         }
+
+        .gnb-auth {
+          margin-left: 8px;
+
+          a {
+            @include text-style(14, $secondary);
+            font-weight: 700;
+
+            &:first-child {
+              margin-right: 12px;
+            }
+
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
       }
     }
 
@@ -53,7 +71,7 @@
     }
 
     .logo {
-      position: static;
+      position: static; // 원래 상태로 되돌리기
       margin-right: 32px;
       transform: none;
 
@@ -72,6 +90,7 @@
   }
 
   @include responsive(D) {
+    // 1200px
     &-right {
       .input-group {
         width: 264px;
