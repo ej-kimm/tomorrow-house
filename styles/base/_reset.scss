@@ -1,15 +1,21 @@
+@use '../constants';
+
 * {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: constants.$font-main;
+  -moz-osx-font-smoothing: grayscale; // 글자 부드럽게
+  -webkit-font-smoothing: antialiased; // 글자 부드럽게
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: constants.$font-main;
+  font-size: constants.$font-size-16; // 기본 본문 폰트 사이즈
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: constants.$font-main;
+  color: constants.$primary;
 }
 
 h1 {
