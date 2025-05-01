@@ -1,0 +1,64 @@
+@use 'sass:meta';
+@use '../constants';
+
+@mixin text-style-12() {
+  font-size: constants.$font-size-12;
+  line-height: constants.$line-height-12;
+  letter-spacing: constants.$letter-spacing-12;
+}
+
+@mixin text-style-13() {
+  font-size: constants.$font-size-13;
+  line-height: constants.$line-height-13;
+  letter-spacing: constants.$letter-spacing-13;
+}
+
+@mixin text-style-14() {
+  font-size: constants.$font-size-14;
+  line-height: constants.$line-height-14;
+  letter-spacing: constants.$letter-spacing-14;
+}
+
+@mixin text-style-16() {
+  font-size: constants.$font-size-16;
+  line-height: constants.$line-height-16;
+  letter-spacing: constants.$letter-spacing-16;
+}
+
+@mixin text-style-18() {
+  font-size: constants.$font-size-18;
+  line-height: constants.$line-height-18;
+  letter-spacing: constants.$letter-spacing-18;
+}
+
+@mixin text-style-24() {
+  font-size: constants.$font-size-24;
+  line-height: constants.$line-height-24;
+  letter-spacing: constants.$letter-spacing-24;
+}
+
+@mixin text-style($size, $color: false) {
+  @if ($size == 12) {
+    @include text-style-12;
+  }
+  @if ($size == 13) {
+    @include text-style-13;
+  }
+  @if ($size == 14) {
+    @include text-style-14;
+  }
+  @if ($size == 16) {
+    @include text-style-16;
+  }
+  @if ($size == 18) {
+    @include text-style-18;
+  }
+  @if ($size == 24) {
+    @include text-style-24;
+  }
+
+  // 유효성 검사
+  @if (meta.type-of($color) == color) {
+    color: $color;
+  }
+}
