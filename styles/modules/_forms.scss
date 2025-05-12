@@ -1,0 +1,77 @@
+@use '../constants';
+@use '../mixins';
+
+%form-base {
+  @include mixins.text-style(16, constants.$primary);
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background-color: constants.$white;
+  border: 1px solid constants.$border;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out;
+  appearance: none;
+
+  &::placeholder {
+    color: constants.$tertiary;
+  }
+
+  &:not(:disabled):hover {
+    background-color: constants.$background;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.form-select,
+.form-input {
+  @extend %form-base;
+}
+
+// NOTE: Select
+.select-group {
+  position: relative;
+
+  &.is-active {
+    .form-select {
+      border-color: constants.$blue;
+    }
+
+    .ic-caret {
+      color: constants.$blue;
+    }
+  }
+
+  .form-select {
+    padding-right: 40px;
+    text-overflow: ellipsis;
+  }
+
+  .ic-caret {
+    @include mixins.pos-center-y;
+    right: 8px;
+    font-size: 24px;
+    color: constants.$tertiary;
+    pointer-events: none;
+  }
+}
+
+// NOTE: Input
+.input-group {
+  position: relative;
+
+  .form-input {
+    padding-left: 40px;
+  }
+
+  .ic-search {
+    @include mixins.pos-center-y;
+    left: 10px;
+    font-size: 20px;
+    color: constants.$secondary;
+  }
+}
