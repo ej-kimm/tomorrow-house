@@ -45,4 +45,56 @@
       height: 20px;
     }
   }
+
+  @include mixins.responsive(T) {
+    // 768px
+    &-wrapper {
+      height: 80px;
+    }
+
+    &-left {
+      @include mixins.flexbox(start);
+    }
+
+    &-right {
+      @include mixins.flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .logo {
+      position: static; // 원래 상태로 되돌리기
+      margin-right: 32px;
+      transform: none;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+
+      i {
+        font-size: 20px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include mixins.responsive(D) {
+    // 1200px
+    &-right {
+      .input-group {
+        width: 264px;
+        margin-right: 24px;
+      }
+    }
+  }
 }

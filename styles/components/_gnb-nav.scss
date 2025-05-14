@@ -1,0 +1,21 @@
+@use '../constants';
+@use '../mixins';
+
+.gnb-nav {
+  &-list {
+    @include mixins.flexbox(start);
+  }
+
+  &-item {
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      @include mixins.text-style(18, constants.$primary);
+      font-weight: 700;
+    }
+  }
+}
