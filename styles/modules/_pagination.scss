@@ -1,0 +1,76 @@
+@use '../constants';
+@use '../mixins';
+
+%page-item-base {
+  @include mixins.inline-flexbox;
+  @include mixins.text-style(16, constants.$primary);
+  height: 26px;
+  font-weight: 700;
+  background-color: constants.$white;
+  border-radius: 4px;
+}
+
+.pagination {
+  @include mixins.flexbox;
+
+  .page-control {
+    @extend %page-item-base;
+    width: 26px;
+    border: 1px solid constants.$border;
+
+    &.page-prev {
+      margin-right: 24px;
+
+      .ic-chevron {
+        transform: rotate(90deg);
+      }
+    }
+
+    &.page-next {
+      margin-left: 24px;
+
+      .ic-chevron {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    .ic-chevron {
+      font-size: 20px;
+    }
+  }
+
+  .page-list {
+    @include mixins.flexbox;
+  }
+
+  .page-item {
+    margin-right: 4px;
+
+    &.is-active {
+      a,
+      button {
+        color: constants.$white !important;
+        background-color: constants.$blue;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a,
+    button {
+      @extend %page-item-base;
+      min-width: 26px;
+      padding: 0 4px;
+
+      &:hover {
+        color: constants.$blue;
+      }
+    }
+  }
+}
