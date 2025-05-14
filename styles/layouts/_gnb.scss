@@ -1,0 +1,48 @@
+@use '../constants';
+@use '../mixins';
+
+.gnb {
+  position: relative;
+  border-bottom: 1px solid constants.$border;
+
+  &-wrapper {
+    @include mixins.flexbox(between);
+    height: 50px;
+  }
+
+  &-right {
+    .button-group {
+      @include mixins.flexbox(end);
+    }
+
+    .gnb-search-button {
+      margin-right: 4px;
+    }
+  }
+
+  &-icon-button {
+    @include mixins.flexbox;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    color: constants.$secondary;
+  }
+
+  &-menu-button {
+    color: constants.$blue;
+  }
+
+  .logo {
+    @include mixins.pos-center;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: 20px;
+    }
+  }
+}
