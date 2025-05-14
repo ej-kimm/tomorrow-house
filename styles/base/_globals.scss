@@ -1,0 +1,60 @@
+@use '../constants';
+
+// https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
+.visually-hidden {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+
+  &:not(caption) {
+    position: absolute !important;
+  }
+
+  * {
+    overflow: hidden !important;
+  }
+}
+
+.sm-only {
+  @media screen and (min-width: constants.$md-breakpoint) {
+    display: none !important;
+  }
+}
+
+.md-only {
+  @media screen and (max-width: (constants.$md-breakpoint - 1)) {
+    display: none !important;
+  }
+  @media screen and (min-width: constants.$lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.lg-only {
+  @media screen and (max-width: (constants.$lg-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.sm-hidden {
+  @media screen and (max-width: (constants.$md-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.md-hidden {
+  @media screen and (min-width: constants.$md-breakpoint) and (max-width: (constants.$lg-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.lg-hidden {
+  @media screen and (min-width: constants.$lg-breakpoint) {
+    display: none !important;
+  }
+}
