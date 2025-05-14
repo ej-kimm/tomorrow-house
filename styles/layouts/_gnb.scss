@@ -15,21 +15,9 @@
       @include mixins.flexbox(end);
     }
 
-    .gnb-search-button {
+    .gnb-icon-button.is-search {
       margin-right: 4px;
     }
-  }
-
-  &-icon-button {
-    @include mixins.flexbox;
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    color: constants.$secondary;
-  }
-
-  &-menu-button {
-    color: constants.$blue;
   }
 
   .logo {
