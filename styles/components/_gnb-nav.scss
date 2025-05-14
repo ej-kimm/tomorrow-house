@@ -2,12 +2,22 @@
 @use '../mixins';
 
 .gnb-nav {
+  $padding: 8px;
+
   &-list {
     @include mixins.flexbox(start);
+    margin-left: -#{$padding};
   }
 
   &-item {
-    margin-right: 24px;
+    margin-right: 24px - ($padding * 2);
+
+    &.is-active,
+    &:hover {
+      a {
+        color: constants.$blue;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -15,6 +25,8 @@
 
     a {
       @include mixins.text-style(18, constants.$primary);
+      display: block;
+      padding: $padding;
       font-weight: 700;
     }
   }
