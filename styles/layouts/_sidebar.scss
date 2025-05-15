@@ -2,9 +2,16 @@
 @use '../mixins';
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: constants.$sidebar-level;
   width: 240px;
+  height: 100vh;
   padding: 32px 20px;
+  overflow-y: auto;
   background-color: constants.$white;
+  overscroll-behavior: contain; // 자기 자신까지만 스크롤
 
   &-header {
     padding: 0 12px;
@@ -87,5 +94,9 @@
         }
       }
     }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
