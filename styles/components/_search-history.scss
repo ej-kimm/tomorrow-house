@@ -1,0 +1,50 @@
+@use '../constants';
+@use '../mixins';
+
+.search-history {
+  $close-button-size: 32px;
+
+  &-header {
+    @include mixins.flexbox(between);
+    margin-bottom: 8px;
+
+    .title,
+    button {
+      @include mixins.text-style(13, constants.$secondary);
+      font-weight: 400;
+    }
+  }
+
+  &-content {
+    .placeholder {
+      @include mixins.flexbox(start);
+      @include mixins.text-style(16, constants.$tertiary);
+      width: 100%;
+      height: 44px;
+      padding: 0 8px;
+    }
+  }
+
+  &-item {
+    position: relative;
+
+    .word-button {
+      @include mixins.text-style(16, constants.$primary);
+      width: 100%;
+      padding: 10px $close-button-size 10px 8px;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    .delete-button {
+      @include mixins.flexbox;
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: $close-button-size;
+      height: $close-button-size;
+      font-size: 16px;
+      color: constants.$tertiary;
+    }
+  }
+}

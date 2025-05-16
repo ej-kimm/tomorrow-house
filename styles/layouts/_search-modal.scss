@@ -11,6 +11,10 @@
   padding: 12px 0;
   background-color: constants.$white;
 
+  &-header {
+    margin-bottom: 20px;
+  }
+
   &-form {
     @include mixins.flexbox(between);
 
