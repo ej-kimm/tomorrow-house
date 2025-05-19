@@ -6,11 +6,8 @@
   $lnb-link-padding: 8px;
   $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
 
+  @include mixins.no-scrollbar;
   overflow-x: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
   &-list {
     // flex (=block) vs inline-flex (=inline-block)
