@@ -1,7 +1,11 @@
+@use './grids';
 @use '../constants';
 @use '../mixins';
 
 .lnb {
+  $lnb-link-padding: 8px;
+  $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
+
   overflow-x: auto;
 
   &::-webkit-scrollbar {
@@ -13,16 +17,18 @@
     // inline-flex는 inline의 성격을 가지고 있다
     // width를 선언하지않으면 content의 길이만큼 width를 갖는다
     @include mixins.inline-flexbox(start);
-    position: relative;
-    left: -8px;
+    height: 40px;
+    padding: 0 #{$grid-margin - $lnb-link-padding};
+    margin-left: -#{$grid-margin};
     white-space: nowrap;
+    border-bottom: 1px solid constants.$border;
   }
 
   &-item {
     &.is-active {
       a {
         color: constants.$blue;
-        border-bottom: 2px solid constants.$blue;
+        border-bottom-color: constants.$blue;
       }
     }
 
@@ -30,13 +36,13 @@
       @include mixins.inline-flexbox;
       @include mixins.text-style(13, constants.$dark);
       height: 40px;
-      padding: 0 8px;
+      padding: 0 $lnb-link-padding;
       font-weight: 700;
+      border-bottom: 2px solid transparent;
     }
 
     .ic-new {
       font-size: 16px;
-      color: constants.$red;
     }
   }
 }
