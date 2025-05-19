@@ -1,0 +1,42 @@
+@use '../constants';
+@use '../mixins';
+
+.lnb {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-list {
+    // flex (=block) vs inline-flex (=inline-block)
+    // inline-flex는 inline의 성격을 가지고 있다
+    // width를 선언하지않으면 content의 길이만큼 width를 갖는다
+    @include mixins.inline-flexbox(start);
+    position: relative;
+    left: -8px;
+    white-space: nowrap;
+  }
+
+  &-item {
+    &.is-active {
+      a {
+        color: constants.$blue;
+        border-bottom: 2px solid constants.$blue;
+      }
+    }
+
+    a {
+      @include mixins.inline-flexbox;
+      @include mixins.text-style(13, constants.$dark);
+      height: 40px;
+      padding: 0 8px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      font-size: 16px;
+      color: constants.$red;
+    }
+  }
+}
