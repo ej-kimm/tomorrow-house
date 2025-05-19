@@ -1,3 +1,5 @@
+@use '../constants';
+
 i {
   font-family: 'tomorrow' !important;
   -moz-osx-font-smoothing: grayscale;
@@ -58,6 +60,7 @@ i {
 }
 
 .ic-new::before {
+  color: constants.$red;
   content: '\e90c';
 }
 
