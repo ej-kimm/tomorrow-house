@@ -1,0 +1,79 @@
+@use '../constants';
+@use '../mixins';
+
+.global-footer {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  background-color: constants.$background;
+
+  &-title {
+    @include mixins.text-style(13, constants.$dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block;
+      font-size: 12px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-contact {
+    @include mixins.text-style(24, constants.$dark);
+    font-weight: 700;
+  }
+
+  &-time {
+    @include mixins.text-style(12, constants.$primary);
+    margin-bottom: 24px;
+  }
+
+  &-detail-list {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    color: constants.$secondary;
+  }
+
+  &-detail-item {
+    @include mixins.flexbox(start);
+
+    address {
+      display: inline;
+    }
+
+    dt::after {
+      margin: 0 2px;
+      content: ':';
+    }
+  }
+
+  @include mixins.responsive(D) {
+    &-title {
+      @include mixins.text-style(14);
+    }
+
+    &-contact {
+      display: inline-block;
+      margin-bottom: 2px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &-detail-list {
+      @include mixins.flexbox(start);
+    }
+
+    &-detail-item {
+      a:hover {
+        text-decoration: underline;
+      }
+
+      &:not(:last-child)::after {
+        margin: 0 8px;
+        content: '|';
+      }
+    }
+  }
+}
