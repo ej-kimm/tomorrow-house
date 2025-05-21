@@ -3,11 +3,12 @@
 
 .gnb {
   position: relative;
+  background-color: constants.$white;
   border-bottom: 1px solid constants.$border;
 
   &-wrapper {
     @include mixins.flexbox(between);
-    height: 50px;
+    height: constants.$gnb-height-sm - 1px;
   }
 
   &-right {
@@ -37,7 +38,7 @@
   @include mixins.responsive(T) {
     // 768px
     &-wrapper {
-      height: 80px;
+      height: constants.$gnb-height-md - 1px;
     }
 
     &-left {
