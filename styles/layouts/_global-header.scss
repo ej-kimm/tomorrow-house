@@ -1,0 +1,30 @@
+@use '../constants';
+@use '../mixins';
+
+.global-header {
+  width: 100%;
+  height: constants.$gnb-height-sm + constants.$lnb-height-sm;
+
+  .gnb,
+  .lnb {
+    position: fixed;
+    left: 0;
+    width: 100%;
+  }
+
+  .gnb {
+    top: 0;
+  }
+
+  .lnb {
+    top: constants.$gnb-height-sm;
+  }
+
+  @include mixins.responsive(T) {
+    height: constants.$gnb-height-md + constants.$lnb-height-md;
+
+    .lnb {
+      top: constants.$gnb-height-md;
+    }
+  }
+}
