@@ -14,10 +14,17 @@
 
   .gnb {
     top: 0;
+
+    // z-index는 내가 z-index를 주려는 값을 감싸고있는 부모중에
+    // position이 있다면 해당 부모의 z-index가 가장 우선순위가 됨
+    // 여기에서는 lnb가 gnb보다 아래에 마크업 되어있어서 z-index가 같다면
+    // lnb가 우선순위가 더 높아짐. 따라서 gnb에 z-index를 높여준다!
+    z-index: constants.$gnb-level;
   }
 
   .lnb {
     top: constants.$gnb-height-sm;
+    z-index: constants.$lnb-level;
   }
 
   @include mixins.responsive(T) {
