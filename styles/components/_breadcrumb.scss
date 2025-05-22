@@ -1,0 +1,45 @@
+@use '../constants';
+@use '../mixins';
+
+.breadcrumb {
+  @include mixins.flexbox(start);
+  flex-wrap: wrap;
+  padding: 10px 0;
+
+  a {
+    @include mixins.text-style(13, constants.$secondary);
+
+    &:active {
+      opacity: 0.4;
+    }
+  }
+
+  .ic-chevron {
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 12px;
+    color: constants.$tertiary;
+    transform: rotate(-90deg);
+  }
+
+  @include mixins.responsive(T) {
+    padding: 16px 0;
+
+    a {
+      @include mixins.text-style(14);
+    }
+
+    .ic-chevron {
+      margin: 0 4px;
+    }
+  }
+
+  @include mixins.responsive(D) {
+    padding-top: 24px;
+    padding-bottom: 40px;
+
+    a:hover {
+      opacity: 0.4;
+    }
+  }
+}
