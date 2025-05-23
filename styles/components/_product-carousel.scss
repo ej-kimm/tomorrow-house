@@ -93,4 +93,35 @@
       }
     }
   }
+
+  @include mixins.responsive(D) {
+    @include mixins.flexbox(end, start);
+    flex-direction: row-reverse;
+    padding-right: 0;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+      margin-bottom: 0;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    .thumbnail-item {
+      margin-right: 0;
+      margin-bottom: 8px;
+
+      button,
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
 }
