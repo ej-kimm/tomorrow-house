@@ -1,0 +1,90 @@
+@use '../constants';
+@use '../mixins';
+
+.product-info {
+  padding: 20px 0;
+
+  &-header {
+    margin-bottom: 16px;
+
+    .info-brand {
+      @include mixins.text-style(13, constants.$blue);
+      font-weight: 700;
+
+      &:active {
+        opacity: 0.4;
+      }
+    }
+
+    .info-title {
+      @include mixins.text-style(18, constants.$dark);
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
+
+    .info-review {
+      @include mixins.flexbox(start);
+
+      .star-rating-13 {
+        margin-right: 8px;
+      }
+
+      p {
+        @include mixins.text-style(13, constants.$blue);
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-price {
+    margin-bottom: 16px;
+
+    .info-original-price,
+    .info-sale-price {
+      @include mixins.flexbox(start);
+    }
+
+    .discount-rate {
+      @include mixins.inline-flexbox(start);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      color: constants.$blue;
+
+      .rate {
+        font-family: constants.$font-price;
+      }
+
+      .percent {
+        font-family: constants.$font-main;
+      }
+    }
+
+    .info-sale-price {
+      margin-bottom: 12px;
+    }
+
+    .price-20 {
+      margin-right: 4px;
+    }
+
+    .info-point {
+      @include mixins.text-style(13, constants.$secondary);
+
+      strong {
+        color: constants.$blue;
+      }
+    }
+  }
+
+  &-delivery {
+    padding-top: 12px;
+    border-top: 1px solid constants.$border;
+
+    span {
+      @include mixins.text-style(16, constants.$primary);
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+}
