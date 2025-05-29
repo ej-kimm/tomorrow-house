@@ -1,34 +1,17 @@
-@use '../constants';
 @use '../mixins';
 
-%star-rating-base {
-  @include mixins.flexbox(start);
-
-  .ic-star {
-    color: constants.$border;
-
-    &.is-active {
-      color: constants.$blue;
-    }
-  }
-}
-
 .star-rating-13 {
-  @extend %star-rating-base;
-  font-size: 13px;
+  @include mixins.star-rating(13px);
 }
 
 .star-rating-16 {
-  @extend %star-rating-base;
-  font-size: 16px;
+  @include mixins.star-rating(16px);
 }
 
 .star-rating-20 {
-  @extend %star-rating-base;
-  font-size: 20px;
+  @include mixins.star-rating(20px);
 }
 
 .star-rating-24 {
-  @extend %star-rating-base;
-  font-size: 24px;
+  @include mixins.star-rating(24px);
 }
