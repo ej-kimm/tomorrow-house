@@ -1,0 +1,41 @@
+@use '../constants';
+@use '../mixins';
+
+.order-form {
+  margin-bottom: 40px;
+
+  .order-inputs {
+    margin-bottom: 20px;
+
+    .select-group {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .order-summary {
+    @include mixins.flexbox(between);
+    margin-bottom: 20px;
+
+    dt {
+      @include mixins.text-style(13, constants.$dark);
+      font-weight: 700;
+    }
+  }
+
+  .button-group {
+    @include mixins.flexbox;
+
+    button {
+      width: 50%;
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

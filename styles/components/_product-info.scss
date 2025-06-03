@@ -157,4 +157,8 @@
       }
     }
   }
+
+  @include mixins.responsive(D) {
+    margin-bottom: 20px;
+  }
 }
