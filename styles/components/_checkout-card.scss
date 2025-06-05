@@ -26,11 +26,26 @@
     height: 20px;
     font-size: 20px;
     color: constants.$secondary;
+
+    &:hover,
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   .checkout-select {
     position: relative;
     display: inline-block;
+
+    &:hover {
+      select {
+        border-color: constants.$tertiary;
+      }
+
+      i {
+        color: constants.$secondary;
+      }
+    }
 
     select {
       @include mixins.text-style(14, constants.$primary);
@@ -41,6 +56,7 @@
       background-color: constants.$white;
       border: 1px solid constants.$border;
       border-radius: 3px;
+      transition: border-color 100ms ease-in-out;
       appearance: none;
     }
 
@@ -50,6 +66,7 @@
       font-size: 20px;
       color: constants.$tertiary;
       pointer-events: none;
+      transition: color 100ms ease-in-out;
     }
   }
 
