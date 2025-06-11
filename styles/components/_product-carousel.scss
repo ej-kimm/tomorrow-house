@@ -52,6 +52,7 @@
 
   @include mixins.responsive(T) {
     padding-right: 30px;
+    margin-bottom: 40px;
 
     &-slider {
       margin: 0 0 8px 0;
@@ -98,6 +99,7 @@
     @include mixins.flexbox(end, start);
     flex-direction: row-reverse;
     padding-right: 0;
+    margin-bottom: 0;
 
     &-slider {
       width: 500px;
