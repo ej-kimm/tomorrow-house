@@ -44,4 +44,31 @@
       color: constants.$secondary;
     }
   }
+
+  @include mixins.responsive(T) {
+    height: 54px;
+    background-color: constants.$background;
+    border-bottom: 0;
+
+    &-list {
+      margin: 0;
+    }
+
+    &-item {
+      button {
+        @include mixins.text-style(16, constants.$primary);
+        height: 54px;
+      }
+
+      .badge {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  @include mixins.responsive(D) {
+    &-item button:hover {
+      color: constants.$blue;
+    }
+  }
 }
