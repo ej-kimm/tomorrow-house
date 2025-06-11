@@ -1,10 +1,7 @@
-@use './grids';
 @use '../constants';
 @use '../mixins';
 
 .product-tab {
-  $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
-
   position: sticky;
   top: constants.$gnb-height-sm + constants.$lnb-height-sm;
   z-index: constants.$product-tab-level;
@@ -15,7 +12,7 @@
 
   &-list {
     @include mixins.flexbox;
-    margin: 0 -#{$grid-margin};
+    margin: 0 -#{constants.$grid-margin};
   }
 
   &-item {

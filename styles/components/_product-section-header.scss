@@ -20,7 +20,7 @@
   .text-button,
   .icon-button {
     @include mixins.pos-center-y;
-    right: -15px;
+    right: -#{constants.$grid-margin};
 
     &:active {
       opacity: 0.4;
@@ -29,14 +29,14 @@
 
   .text-button {
     @include mixins.text-style(14, constants.$blue);
-    padding: 15px;
+    padding: constants.$grid-margin;
     font-weight: 700;
   }
 
   .icon-button {
     @include mixins.flexbox;
-    width: 22px + (15px * 2);
-    height: 22px + (15px * 2);
+    width: 22px + (constants.$grid-margin * 2);
+    height: 22px + (constants.$grid-margin * 2);
     font-size: 22px;
     color: constants.$secondary;
 

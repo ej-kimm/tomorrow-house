@@ -1,10 +1,8 @@
-@use './grids';
 @use '../constants';
 @use '../mixins';
 
 .lnb {
   $lnb-link-padding: 8px;
-  $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
 
   @include mixins.no-scrollbar;
   overflow-x: auto;
@@ -16,8 +14,8 @@
     // width를 선언하지않으면 content의 길이만큼 width를 갖는다
     @include mixins.inline-flexbox(start);
     height: constants.$lnb-height-sm;
-    padding: 0 #{$grid-margin - $lnb-link-padding};
-    margin-left: -#{$grid-margin};
+    padding: 0 #{constants.$grid-margin - $lnb-link-padding};
+    margin-left: -#{constants.$grid-margin};
     white-space: nowrap;
     border-bottom: 1px solid constants.$border;
   }
