@@ -1,0 +1,47 @@
+@use './grids';
+@use '../constants';
+@use '../mixins';
+
+.product-tab {
+  $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
+
+  width: 100%;
+  height: 40px;
+  background-color: constants.$white;
+  border-bottom: 1px solid constants.$border;
+
+  &-list {
+    @include mixins.flexbox;
+    margin: 0 -#{$grid-margin};
+  }
+
+  &-item {
+    width: (100% / 5);
+
+    &.is-active {
+      button {
+        color: constants.$blue;
+        border-bottom-color: constants.$blue;
+      }
+    }
+
+    button {
+      @include mixins.flexbox;
+      @include mixins.text-style(13, constants.$dark);
+      width: 100%;
+      height: 40px;
+      font-weight: 700;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+
+      &:active {
+        color: constants.$blue;
+      }
+    }
+
+    .badge {
+      margin-left: 4px;
+      color: constants.$secondary;
+    }
+  }
+}
