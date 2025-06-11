@@ -5,6 +5,8 @@
 .product-tab {
   $grid-margin: grids.$sm-margin + calc(grids.$gutter / 2);
 
+  position: sticky;
+  top: constants.$gnb-height-sm + constants.$lnb-height-sm;
   width: 100%;
   height: 40px;
   background-color: constants.$white;
@@ -16,7 +18,7 @@
   }
 
   &-item {
-    width: (100% / 5);
+    width: calc(100% / 5);
 
     &.is-active {
       button {
@@ -46,6 +48,7 @@
   }
 
   @include mixins.responsive(T) {
+    top: constants.$gnb-height-md + constants.$lnb-height-md;
     height: 54px;
     background-color: constants.$background;
     border-bottom: 0;
