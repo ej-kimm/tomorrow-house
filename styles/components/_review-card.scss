@@ -44,6 +44,21 @@
   &-body {
     margin-bottom: 20px;
 
+    .review-image {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      border-radius: 4px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     p {
       @include mixins.text-style(13, constants.$primary);
     }
@@ -55,6 +70,13 @@
     button {
       width: 120px;
       margin-right: 8px;
+
+      i {
+        margin-right: 4px;
+        margin-left: -4px;
+        font-size: 20px;
+        color: constants.$white;
+      }
     }
 
     p {
@@ -83,6 +105,12 @@
     }
 
     &-body {
+      .review-image {
+        width: 112px;
+        height: 112px;
+        margin-bottom: 16px;
+      }
+
       p {
         @include mixins.text-style(14);
       }
