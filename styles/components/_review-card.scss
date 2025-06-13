@@ -1,0 +1,102 @@
+@use '../constants';
+@use '../mixins';
+
+.review-card {
+  padding: 20px 0;
+
+  &-header {
+    @include mixins.flexbox(start);
+    margin-bottom: 20px;
+
+    .avatar-24,
+    .username {
+      &:active {
+        opacity: 0.4;
+      }
+    }
+
+    .avatar-24 {
+      margin-right: 8px;
+    }
+
+    .username {
+      @include mixins.text-style(13, constants.$primary);
+
+      strong {
+        font-weight: 400;
+      }
+    }
+
+    .detail {
+      @include mixins.flexbox(start);
+      @include mixins.text-style(12, constants.$secondary);
+
+      .star-rating-13 {
+        margin-right: 4px;
+      }
+
+      time::after {
+        content: '∙';
+      }
+    }
+  }
+
+  &-body {
+    margin-bottom: 20px;
+
+    p {
+      @include mixins.text-style(13, constants.$primary);
+    }
+  }
+
+  &-footer {
+    @include mixins.flexbox(start);
+
+    button {
+      width: 120px;
+      margin-right: 8px;
+    }
+
+    p {
+      @include mixins.text-style(12, constants.$primary);
+
+      strong {
+        font-weight: 400;
+
+        span {
+          font-weight: 700;
+          color: constants.$dark;
+        }
+      }
+    }
+  }
+
+  @include mixins.responsive(T) {
+    padding: 40px 0 40px 32px;
+
+    &-header {
+      margin-left: -32px;
+
+      .username {
+        @include mixins.text-style(14);
+      }
+    }
+
+    &-body {
+      p {
+        @include mixins.text-style(14);
+      }
+    }
+  }
+
+  @include mixins.responsive(D) {
+    &-header {
+      .avatar-24,
+      .username {
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
