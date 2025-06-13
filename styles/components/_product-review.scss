@@ -1,0 +1,11 @@
+@use '../constants';
+
+.product-review {
+  .review-item {
+    border-bottom: 1px solid constants.$border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
