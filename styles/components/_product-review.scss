@@ -1,11 +1,28 @@
 @use '../constants';
+@use '../mixins';
 
 .product-review {
+  .review-empty {
+    @include mixins.text-style(16, constants.$secondary);
+    padding: 36px 0;
+    text-align: center;
+
+    strong {
+      color: constants.$blue;
+    }
+  }
+
   .review-item {
     border-bottom: 1px solid constants.$border;
 
     &:last-child {
       border-bottom: 0;
+    }
+  }
+
+  @include mixins.responsive(T) {
+    .review-empty {
+      padding: 16px 0;
     }
   }
 }
