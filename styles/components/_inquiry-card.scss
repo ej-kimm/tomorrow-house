@@ -1,0 +1,76 @@
+@use '../constants';
+@use '../mixins';
+
+.inquiry-card {
+  padding-bottom: 40px;
+
+  &-header {
+    @include mixins.text-style(12);
+    margin-bottom: 8px;
+
+    .detail,
+    .misc {
+      @include mixins.flexbox(start);
+
+      dd,
+      strong {
+        &::after {
+          margin: 0 4px;
+          content: '|';
+        }
+      }
+
+      dd:last-child::after {
+        content: none;
+      }
+    }
+
+    .detail {
+      margin-bottom: 8px;
+      color: constants.$primary;
+    }
+
+    .misc {
+      color: constants.$tertiary;
+
+      strong {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &-body {
+    @include mixins.text-style(13);
+
+    .question-content {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: 700;
+      color: constants.$blue;
+    }
+
+    p {
+      color: constants.$primary;
+    }
+  }
+
+  @include mixins.responsive(T) {
+    &-header {
+      margin-bottom: 20px;
+    }
+
+    &-body {
+      @include mixins.text-style(16);
+
+      .question-content {
+        padding-left: 24px;
+      }
+    }
+  }
+}
