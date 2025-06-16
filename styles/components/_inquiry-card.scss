@@ -56,7 +56,14 @@
     }
 
     p {
+      @include mixins.flexbox(start);
       color: constants.$primary;
+
+      i {
+        margin-right: 8px;
+        font-size: 16px;
+        color: constants.$tertiary;
+      }
     }
   }
 
