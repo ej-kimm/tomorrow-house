@@ -29,6 +29,7 @@
 
   &-title {
     @include mixins.text-style(13, constants.$dark);
+    @include mixins.line-clamp(2);
     font-weight: 400;
     line-height: 16px;
   }
