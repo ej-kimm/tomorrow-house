@@ -1,0 +1,10 @@
+@use '../constants';
+@use '../mixins';
+
+.user-gallery {
+  margin: 0 -#{constants.$grid-margin};
+
+  @include mixins.responsive(T) {
+    margin: 0;
+  }
+}
