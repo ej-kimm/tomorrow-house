@@ -8,6 +8,10 @@
     height: 8px;
     margin: 0 -#{constants.$grid-margin};
     background-color: constants.$border;
+
+    &.is-big {
+      height: 24px;
+    }
   }
 
   @include mixins.responsive(T) {
