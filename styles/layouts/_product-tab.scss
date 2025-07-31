@@ -48,6 +48,7 @@
   @include mixins.responsive(T) {
     top: constants.$gnb-height-md + constants.$lnb-height-md;
     height: 54px;
+    margin: 40px 0;
     background-color: constants.$background;
     border-bottom: 0;
 
