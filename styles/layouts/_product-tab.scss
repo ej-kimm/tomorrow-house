@@ -6,7 +6,7 @@
   top: constants.$gnb-height-sm + constants.$lnb-height-sm;
   z-index: constants.$product-tab-level;
   width: 100%;
-  height: 40px;
+  height: constants.$product-tab-height-sm;
   background-color: constants.$white;
   border-bottom: 1px solid constants.$border;
 
@@ -47,7 +47,7 @@
 
   @include mixins.responsive(T) {
     top: constants.$gnb-height-md + constants.$lnb-height-md;
-    height: 54px;
+    height: constants.$product-tab-height-md;
     margin: 40px 0;
     background-color: constants.$background;
     border-bottom: 0;
