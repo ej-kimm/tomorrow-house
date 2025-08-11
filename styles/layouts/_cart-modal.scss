@@ -4,6 +4,7 @@
 .cart-modal {
   @include mixins.pos-center(fixed);
   z-index: constants.$cart-modal-level;
+  display: none;
   width: calc(100% - #{constants.$grid-margin * 2});
   max-width: 360px;
   padding: 40px 24px;
@@ -11,6 +12,10 @@
   text-align: center;
   background-color: constants.$white;
   border-radius: 8px;
+
+  &.is-active {
+    display: block;
+  }
 
   .cart-title {
     @include mixins.text-style(16, constants.$dark);
