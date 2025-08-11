@@ -1,0 +1,45 @@
+@use '../constants';
+@use '../mixins';
+
+.bookmark-toast {
+  $close-button-size: 36px;
+
+  @include mixins.flexbox(between);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: constants.$bookmark-toast-level;
+  width: 100%;
+  height: 56px;
+  padding-right: constants.$grid-margin;
+  padding-left: $close-button-size;
+  background-color: constants.$white;
+  box-shadow: constants.$popup-reversed-shadow;
+
+  .bookmark-title {
+    @include mixins.text-style(13, constants.$primary);
+    font-weight: 400;
+  }
+
+  .close-button {
+    @include mixins.pos-center-y;
+    @include mixins.inline-flexbox;
+    left: 0;
+    width: $close-button-size;
+    height: $close-button-size;
+    font-size: 20px;
+    color: constants.$tertiary;
+
+    &:active {
+      color: constants.$secondary;
+    }
+  }
+
+  .button-group {
+    @include mixins.flexbox(end);
+
+    a {
+      margin-right: 4px;
+    }
+  }
+}
