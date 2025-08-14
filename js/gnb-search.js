@@ -15,7 +15,7 @@ function closeGnbSearchHistoryOnClickingOutside(e) {
 }
 
 function openGnbSearchHistory() {
-  if (gnbSearchHistoryList.children.length === 0) {
+  if (!gnbSearchHistoryList.hasChildNodes()) {
     return
   }
 
@@ -28,7 +28,7 @@ function openGnbSearchHistory() {
 gnbSearchInput.addEventListener('focus', openGnbSearchHistory)
 
 function deleteAllSearchHistoryItems() {
-  gnbSearchHistoryList.innerHTML = ''
+  gnbSearchHistoryList.replaceChildren()
   gnbSearchHistory.classList.remove('is-active')
 }
 
